@@ -1,0 +1,98 @@
+#dev {
+  background-color: #ccc;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #000;
+  margin: 15px auto; }
+  #dev button {
+    margin: 5px auto; }
+
+.winner {
+  color: #fff;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); }
+
+body {
+  background-color: #546e7a; }
+  body .title {
+    color: #fff;
+    font-weight: bold;
+    padding: 50px 0px; }
+  body .col-md-auto {
+    display: block;
+    margin: auto; }
+  body .pad {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #212121;
+    cursor: pointer; }
+  body .green {
+    background-color: #067010;
+    border-top-left-radius: 100%;
+    float: left;
+    border-top: 15px solid #212121;
+    border-left: 15px solid #212121; }
+    body .green.clicked {
+      background-color: #1df330; }
+  body .red {
+    background-color: #d91502;
+    border-top-right-radius: 100%;
+    margin-left: 200px;
+    border-top: 15px solid #212121;
+    border-right: 15px solid #212121; }
+    body .red.clicked {
+      background-color: #fe8277; }
+  body .yellow {
+    background-color: #b4b400;
+    border-bottom-left-radius: 100%;
+    border-left: 15px solid #212121;
+    border-bottom: 15px solid #212121;
+    float: left; }
+    body .yellow.clicked {
+      background-color: #ffff4e; }
+  body .blue {
+    background-color: #0379ae;
+    border-bottom-right-radius: 100%;
+    margin-left: 200px;
+    border-right: 15px solid #212121;
+    border-bottom: 15px solid #212121; }
+    body .blue.clicked {
+      background-color: #4dc7fc; }
+  body .circle {
+    border: 10px solid #212121;
+    background-color: #212121;
+    color: #fff;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 100px;
+    margin-left: 115px;
+    position: absolute;
+    z-index: 1;
+    padding: 15px 0px; }
+    body .circle #control {
+      padding: 14% 0%; }
+      body .circle #control #stepCounter {
+        font-size: 28px;
+        line-height: 1 !important; }
+      body .circle #control .str {
+        margin-top: -14px !important; }
+        body .circle #control .str .strict {
+          width: 5px !important;
+          height: 5px !important;
+          border-radius: 50%;
+          display: block;
+          margin-left: 18px;
+          margin-bottom: 8px;
+          margin-right: auto; }
+          body .circle #control .str .strict.on {
+            background-color: #FF5722;
+            box-shadow: 0px 0px 2px 2px #FF5722; }
+      body .circle #control button {
+        font-size: 12px !important;
+        padding: 5px !important; }
+    body .circle .row {
+      margin: 0px !important; }
+      body .circle .row .col {
+        padding: 0px !important; }
+
+/*# sourceMappingURL=main.css.map */

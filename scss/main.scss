@@ -1,0 +1,137 @@
+// dev
+#dev{
+  // display:
+  background-color: #ccc;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #000;
+  margin: 15px auto;
+  button{
+    margin: 5px auto;
+  }
+}
+
+
+
+
+
+// colors
+$border: #212121;
+$green: #0ab91a;
+$red: #fd3d2b;
+$blue: #04aef9;
+$yellow: #ffff01;
+$body: #546e7a;
+
+.winner{
+  color: #fff;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+
+body {
+    background-color: $body;
+    .title {
+        color: #fff;
+        font-weight: bold;
+        padding: 50px 0px;
+    }
+    .col-md-auto {
+        display: block;
+        margin: auto;
+    }
+    .pad {
+        width: 200px;
+        height: 200px;
+        border: 10px solid $border;
+        cursor: pointer;
+    }
+    .green {
+        background-color: darken($green, 15%);
+        border-top-left-radius: 100%;
+        float: left;
+        border-top: 15px solid $border;
+        border-left: 15px solid $border;
+        &.clicked {
+            background-color: lighten($green, 15%);
+        }
+    }
+    .red {
+        background-color: darken($red, 15%);
+        border-top-right-radius: 100%;
+        margin-left: 200px;
+        border-top: 15px solid $border;
+        border-right: 15px solid $border;
+        &.clicked {
+            background-color: lighten( $red, 15%)
+        }
+    }
+    .yellow {
+        background-color: darken($yellow, 15%);
+        border-bottom-left-radius: 100%;
+        border-left: 15px solid $border;
+        border-bottom: 15px solid $border;
+        float: left;
+        &.clicked {
+            background-color: lighten( $yellow, 15%)
+        }
+    }
+    .blue {
+        background-color: darken($blue, 15%);
+        border-bottom-right-radius: 100%;
+        margin-left: 200px;
+        border-right: 15px solid $border;
+        border-bottom: 15px solid $border;
+        &.clicked {
+            background-color: lighten( $blue, 15%)
+        }
+    }
+    .circle {
+        border: 10px solid $border;
+        background-color: $border;
+        color: #fff;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-top: 100px;
+        margin-left: 115px;
+        position: absolute;
+        z-index: 1;
+        padding: 15px 0px;
+        #control{
+          padding: 14% 0%;
+          #stepCounter{
+            font-size: 28px;
+            line-height: 1 !important;
+          }
+          .str{
+            margin-top: -14px !important;
+            .strict{
+              width: 5px !important;
+              height: 5px !important;
+              border-radius: 50%;
+              display: block;
+              margin-left: 18px;
+              margin-bottom: 8px;
+              margin-right: auto;
+              &.on{
+                background-color: #FF5722;
+                box-shadow: 0px 0px 2px 2px #FF5722;
+              }
+            }
+          }
+          button {
+              font-size: 12px !important;
+              padding: 5px !important;
+          }
+        }
+
+        .row {
+            margin: 0px !important;
+            .col {
+                padding: 0px !important;
+            }
+        }
+
+    }
+}

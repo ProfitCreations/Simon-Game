@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   // sounds
   var soundGreen = $("#sound_1")[0];
   var soundRed = $("#sound_2")[0];
@@ -21,35 +22,30 @@ $(document).ready(function() {
 
   // helper function for clicked buttons
   function remClass(color) {
-    console.log("fn remClass");
     setTimeout(function() {
       $(color).removeClass("clicked");
     }, 400);
   }
 
   function playGreen() {
-    console.log("fn playGreen");
     $(".green").addClass("clicked");
     soundGreen.play();
     remClass(".green");
   }
 
   function playRed() {
-    console.log("fn playRed");
     $(".red").addClass("clicked");
     soundRed.play();
     remClass(".red");
   }
 
   function playYellow() {
-    console.log("fn playYellow");
     $(".yellow").addClass("clicked");
     soundYellow.play();
     remClass(".yellow");
   }
 
   function playBlue() {
-    console.log("fn playBlue");
     $(".blue").addClass("clicked");
     soundBlue.play();
     remClass(".blue");
@@ -109,8 +105,8 @@ $(document).ready(function() {
     }
   });
 
+  // reset the game
   function resetGame() {
-    console.log("fn resetGame");
     if (win) {
       win = false;
       stepCounter = 0;
@@ -129,22 +125,19 @@ $(document).ready(function() {
   }
 
   function generateStep() {
-    console.log("fn generateStep");
     var randColor = colorArr[Math.floor(Math.random() * colorArr.length)];
-    console.log("randColor -> ", randColor);
     stepArr.push(randColor);
     // Update step counter
     stepCounter++;
     $("#stepCounter").text(twoDigits(stepCounter));
     if (stepCounter > playerStepCounter) {
       playerTurn = true;
-      console.log("playerTurn -> ", playerTurn);
     }
     return playStep(randColor);
   }
 
+//  Helper function
   function playStep(color) {
-    console.log("fn playStep");
     switch (color) {
       case "green":
         playGreen();
@@ -162,28 +155,19 @@ $(document).ready(function() {
   }
 
   function checkStep(step) {
-    console.log("fn checkStep, step -> ", step);
     var gameStep = stepArr[checkStepCounter];
     if (checkStepCounter === 20) {
       return winner();
     }
     if (step === gameStep) {
-      console.log("Good");
       badStep = false;
       checkStepCounter++;
-      console.log('checkStepCounter -> ', checkStepCounter);
-      // if (checkStepCounter > 19) {
-      //   winner();
-      // } else {
         if (checkStepCounter === stepArr.length) {
           playerTurn = false;
-          console.log("playerTurn -> ", playerTurn);
           setTimeout(playGeneratedSteps, 2000);
           checkStepCounter = 0;
         }
-      // }
     } else {
-      console.log("Bad");
       badStep = true;
       checkStepCounter = 0;
       $(".simon").addClass("animated shake");
@@ -204,16 +188,10 @@ $(document).ready(function() {
   }
 
   function playGeneratedSteps() {
-    console.log("fn playGeneratedSteps");
     var playTimer = setInterval(playGeneratedStepsPlayer, 1000);
-
     function playGeneratedStepsPlayer() {
       if (playGeneratedStepsCounter < stepArr.length) {
         playStep(stepArr[playGeneratedStepsCounter]);
-        console.log(
-          "stepArr[playGeneratedStepsCounter] -> ",
-          stepArr[playGeneratedStepsCounter]
-        );
         playGeneratedStepsCounter++;
       } else {
         if (badStep) {
@@ -253,37 +231,4 @@ $(document).ready(function() {
 		return ("00" + val).slice(-2);
 	}
 
-  /*
-    ===============
-     */
-
-  /*
-      *  Developement purposes
-      */
-
-  $("#stepArr").click(function() {
-    console.log("stepArr -> ", stepArr);
-  });
-
-  $("#gameStep").click(function() {
-    console.log("gameStep -> ", stepArr[playerStepCounter]);
-  });
-
-  $("#playGeneratedSteps").click(function() {
-    playGeneratedSteps();
-  });
-
-  $("#playGeneratedStepsCounter").click(function() {
-    console.log("playGeneratedStepsCounter -> ", playGeneratedStepsCounter);
-  });
-
-  $("#winner").click(function() {
-    winner();
-  });
-
-
-
-  /*
-     ===============
-      */
 });
